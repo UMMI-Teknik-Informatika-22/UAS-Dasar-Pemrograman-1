@@ -1,0 +1,2 @@
+- GitHub : https://github.com/ranifebriani27/Aplikasi-Kasir-Toko-Serba-35.000
+- YouTube : https://youtu.be/-Y6KH2kI9XA

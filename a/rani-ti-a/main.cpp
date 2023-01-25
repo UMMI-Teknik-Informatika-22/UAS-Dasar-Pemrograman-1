@@ -1,43 +1,106 @@
-// memasukkan library tambahan
-#include <iostream> //  import library input out
-#include <vector> // import library array dinamis
-
-// memasukkan daftar data dari folder data
-#include "./data/daftarBarang.cpp" // data daftar barang
-
-#include "./service/pembelianBarang.h" // memasukkan proses pembelian barang
-#include "./service/header.h" // memasukkan proses menampilkan header
-#include "./service/footer.h" // memasukkan proses menampilkan footer
-
-// agar ketika memanggil fungsi dari library di tidak harus pakai ::std, jadi langsung saja ke fungsinya
-// contoh: std::cout (tidak pakai using namespace std), cout (pakai using namespace std)
+#include<iostream>
 using namespace std;
 
-// fungsi utama yang akan di jalankan
-int main() {
-    int pilihNomorBarang; // deklarasi pilih nomor barang untuk di proses pada pemilihan data dari daftar barang
+/*
+        TUGAS UAS DASAR PEMROGRAMAN SEMESTER 1
+    Nama            : Rani Febriani
+    Kelas           : A (Semester 1)
+    Uas Mata Kuliah : Dasar Pemrograman
+*/
 
-    header(); // memanggil fungsi header
+struct text {
+    string text_pakaian,text_perabotan,text_sandal,jmlh_produk,harga_produk,potongan_harga,total_bayar;
+};
 
-    cout << "==== Daftar Barang ==== \n"; // menampilkan kalimat
-
-    // melakukan perulangan dari daftar barang
-    // 1. deklarasi & inisialisasi variabel i dengan nilai 0
-    // 2. kondisi i lebih kecil dari jumlah daftar barang yang di hitungkan otomatis menggunakan fungsi .size()
-    // 3. i di tambah 1
-    for (int i = 0; i < daftarBarang.size(); i++) {
-
-        // menampilkan daftar nama barang array daftarBarang dari indeks ke i, dan mengaksesnya . nama
-        // contoh "1. Baju"
-        cout << i + 1 << ". " << daftarBarang[i].nama << "\n";
+void tampilanAtas(){
+    string tanggal;
+    for (int a = 1;a <= 6; a++){
+        cout << "\t";
     }
-    
-    cout << "\nPilih barang (1 - " << daftarBarang.size() << ") : "; // menampilkan label barang dari 1 sampai ke jumlah data barang
-    cin >> pilihNomorBarang; // memasukkan nilai ke variabel pilihNomorBarang
+    cout << "\tTOKO SERBA 35.000\n";
 
-    // memanggil fungsi pembelianBarang dan memasukkan parameter dari daftarBarang dengan indeks yang di proses variabel pilihNomorBarang - 1, karena indeks di mulai dari angka 0
-    pembelianBarang(daftarBarang[pilihNomorBarang - 1]);
+    for (int a = 1;a <= 6; a++){
+        cout << "\t";
+    }
+    cout << "================================\n";
+    for (int a=1; a<=7;a++){
+        cout << "\t";
+    }
+    cout << "Jln. Syamsudin sh" << endl;
+    for (int a = 1; a <= 5 ; a++){
+        cout << "\t";
+    }
+    cout << "\t\tTlp. (0000)214 012" << endl;
+    for (int a = 1; a <=7; a++){
+        cout << "\t";
+    }
+    cout << "     SUKABUMI" << endl;
+    cout << endl;
 
-    // menampilkan footer
-    footer();
+    cout << "      ============================================================================================================\n";
+    cout << "\tTanggal      : ";
+    cin >> tanggal;
+    cout << "      ============================================================================================================\n";
+}
+
+void inti (){
+    text text1;
+        text1.text_pakaian      = "\tPakaian                       : ";
+        text1.text_perabotan    = "\tPerabotan                     : ";
+        text1.text_sandal       = "\tSandal                        : ";
+        text1.jmlh_produk       = "\tJumlah Produk                 : ";
+        text1.harga_produk      = "\tHarga Satu Produk             : ";
+        text1.potongan_harga    = "\tPotongan Harga                : ";
+        text1.total_bayar       = "\tTotal Yang Harus Di Bayar     : ";
+    int harga = 35000,pakaian,perabotan,sandal,total_produk,total;
+    float harga_pemotongan;
+    float diskon [2] = {0.1, 0.05};
+
+    cout << "\t====Jumlah Produk Perjenis Produk====\n";
+    cout << text1.text_pakaian;
+    cin >> pakaian;
+    cout << text1.text_perabotan;
+    cin >> perabotan;
+    cout << text1.text_sandal;
+    cin >> sandal;
+    total_produk = pakaian+perabotan+sandal;
+    cout << text1.jmlh_produk << total_produk << endl;
+    cout << text1.harga_produk << harga << endl;
+    total = total_produk*harga;
+    cout << "\tTotal                         : " << total << endl;
+    if (total >= 300000){
+        cout <<"\tSELAMAT ANDA MENDAPATKAN DISKON 10%" << endl;
+        harga_pemotongan = total * diskon [0];
+        cout <<text1.potongan_harga << harga_pemotongan << endl;
+        cout <<text1.total_bayar << total-harga_pemotongan << endl;
+    }
+    else if (total >= 150000 ){
+        cout << "\tSELAMAT ANDA MENDAPATKAN DISKON 5%" << endl;
+        harga_pemotongan = total*diskon [1];
+        cout << text1.potongan_harga << harga_pemotongan << endl;
+        cout << text1.total_bayar << total-harga_pemotongan << endl;
+    }
+    cout << endl;
+}
+
+void tampilanBawah(){
+    cout << "      ============================================================================================================\n";
+    cout << endl;
+    for (int a=0;a<=4;a++){
+        cout << "\t";
+    }
+    cout << "TERIMAKASIH SUDAH BERBELANJA DITOKO KAMI" << endl;
+    cout << endl;
+    for (int a=0;a<=5;a++){
+        cout << "\t";
+    }
+    cout << "     HAPPY SHOPPING" << endl;
+    cout << endl;
+    cout << "      ============================================================================================================\n";
+}
+
+int main (){
+    tampilanAtas();
+    inti ();
+    tampilanBawah ();
 }
