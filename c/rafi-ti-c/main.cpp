@@ -6,7 +6,6 @@ struct Peralatan {
   string nama;
   vector<string> ukuran;
   vector<long> harga;
-  int stok;
 };
 
 vector<Peralatan> daftarPeralatan{
@@ -14,47 +13,62 @@ vector<Peralatan> daftarPeralatan{
     "Tenda",
     {"Kecil", "Sedang", "Besar"},
     {25000, 35000,45000},
-    10,
   },
   {
     "Tas Cerier",
     {"Kecil", "Sedang", "Besar"},
     {15000,20000, 25000},
-    16,
   },
   {
     "Flysheet",
     {"Kecil", "Sedang", "Besar"},
     {10000, 15000,20000},
-    10,
   },
 };
 
 void tampilkanDetailPeralatan(Peralatan peralatan) {
-  cout << "==== Detail Barang ==== \n";
-  cout << "Nama barang \t:" << peralatan.nama << "\n";
-  cout << "Stok  \t\t: " <<  peralatan.stok << "\n";
+  int ukuranBarang, jumlahBarang;
 
-  cout << "Ukuran & harga : ";
-  for (int i = 0; i < peralatan.ukuran.size(); ++i) {
-    cout << (i == 0 ? "\t" : "\t\t\t") << i + 1 << "." << peralatan.ukuran[i] << " : " << peralatan.harga[i] <<"\n";
+  cout << "==== Detail Barang ====\n\n";
+  cout << "Nama barang\t:\t" << peralatan.nama << "\n";
+  cout << "Ukuran & harga\t: ";
+  for (int i = 0; i < peralatan.ukuran.size(); i++) {
+    cout << (i == 0 ? "\t" : "\t\t\t") << i + 1 << ". " << peralatan.ukuran[i] << " : " << peralatan.harga[i] <<"\n";
+  }
+
+  cout << "Pilih ukuran : ";
+  cin >> ukuranBarang;
+
+  if (ukuranBarang > 0  && ukuranBarang <= peralatan.ukuran.size()) {
+    cout << "Masukkan jumlah : ";
+    cin >> jumlahBarang;
+
+    if (jumlahBarang > 0) {
+      cout << "Total harga : Rp " << jumlahBarang * peralatan.harga[ukuranBarang - 1];
+    } else {
+      cout << "Masukkan jumlah barang dengan benar!";
+    }
+  } else {
+    cout << "Tidak ada pilihan ukuran barang!";
   }
 };
 
 int main() {
-  int pilihNomorBarang;
+  int NomorBarang;
 
-  cout << "================ Sewa Peralatan Outdoor ================ \n";
+  cout << "================ Sewa Peralatan Outdoor ================\n\n";
   for (int i = 0; i < daftarPeralatan.size() ; ++i) {
-    cout << i + 1 << "." << daftarPeralatan[i].nama << "\n";
+    cout << i + 1 << ". " << daftarPeralatan[i].nama << "\n";
   }
 
-  cout << "\nPilih barang (1 - " << daftarPeralatan.size() << ") : ";
-  cin >> pilihNomorBarang;
+  cout << "\n\nPilih barang (1 - " << daftarPeralatan.size() << ") : ";
+  cin >> NomorBarang;
 
-  if (pilihNomorBarang > 0  && pilihNomorBarang <= daftarPeralatan.size()) {
-    tampilkanDetailPeralatan(daftarPeralatan[pilihNomorBarang - 1]);
-  } else{
+  system("cls");
+
+  if (NomorBarang > 0  && NomorBarang <= daftarPeralatan.size()) {
+    tampilkanDetailPeralatan(daftarPeralatan[NomorBarang - 1]);
+  } else {
     cout << "Tidak ada pilihan barang!";
   }
 }

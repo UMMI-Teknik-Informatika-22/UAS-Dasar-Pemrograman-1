@@ -1,12 +1,21 @@
 #include <string>
+#include <vector>
+
+#include "./Time.cpp"
 
 using namespace std;
+
+struct WatchingSeat{
+  char alphabet;
+  int number;
+};
 
 struct Ticket{
   string buyerName,
     title,
-    date,
     time;
-  int quantity{},
-    price{};
+  vector<WatchingSeat> seats;
+  Time wacthingTime;
+  int quantity,
+    price;
 };

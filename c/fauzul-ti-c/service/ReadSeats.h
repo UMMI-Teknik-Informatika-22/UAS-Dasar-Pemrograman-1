@@ -2,9 +2,11 @@
 #define READ_SEATS_H
 
 #include "../data/alphabets.cpp"
+#include "../data/seats.cpp"
 
 void ReadSeats() {
-  for (char alphabet : alphabets) {
+  if (seats.size() == 0) {
+    for (char alphabet : alphabets) {
     vector<Seat> row;
 
     for (int i = 0; i < alphabets.size(); i++) {
@@ -12,6 +14,7 @@ void ReadSeats() {
     }
 
     seats.push_back(row);
+  } 
   }
 
   for (auto & row : seats) {

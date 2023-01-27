@@ -2,7 +2,7 @@
 #define READ_MOVIE_DETAILS_H
 
 void ReadMovieDetails(Movie detail) {
-  cout << "==== Movie Details ==== \n";
+  cout << "==== Movie Details ====\n\n";
   cout << "Title\t\t:\t" << detail.title << "\n";
   cout << "Duration\t:\t" << detail.duration << "\n";
   cout << "Time\t\t:";

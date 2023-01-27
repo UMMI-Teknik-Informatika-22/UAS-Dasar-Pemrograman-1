@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/muham/OneDrive/Desktop/uas-dasar-pemrograman/fauzul-ti-c
+# Install script for directory: C:/Users/muham/OneDrive/Desktop/uas-dasar-pemrograman/c/fauzul-ti-c
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/muham/OneDrive/Desktop/uas-dasar-pemrograman/fauzul-ti-c/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/muham/OneDrive/Desktop/uas-dasar-pemrograman/c/fauzul-ti-c/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

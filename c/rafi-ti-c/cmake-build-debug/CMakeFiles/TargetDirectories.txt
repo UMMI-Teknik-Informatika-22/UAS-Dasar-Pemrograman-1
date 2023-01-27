@@ -1,3 +1,0 @@
-C:/Users/muham/OneDrive/Desktop/rafi/cmake-build-debug/CMakeFiles/rafi.dir
-C:/Users/muham/OneDrive/Desktop/rafi/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/muham/OneDrive/Desktop/rafi/cmake-build-debug/CMakeFiles/rebuild_cache.dir
